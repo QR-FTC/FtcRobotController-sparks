@@ -1,11 +1,16 @@
 package org.firstinspires.ftc.teamcode;
 
 public class bottle {
-    public static String volrectprism(double l, double w, double h) {
-        return (l*w*h + "u^3");
+    public static int volrectprism(int l, int w, int h) {
+        return l*w*h;
+    }
+    public static int vol4rectprism() {
+        return volrectprism(4 ,3, 7)*4;
+        
     }
 
     public static void main(String[] args) {
-        System.out.print(volrectprism(4,3,7));
+        System.out.println(volrectprism(4,3,7));
+        System.out.println(vol4rectprism());
     }
 }
