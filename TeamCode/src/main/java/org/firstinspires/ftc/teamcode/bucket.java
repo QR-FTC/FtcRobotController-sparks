@@ -6,4 +6,3 @@ public class bucket {
         int a = 2;
     }// el bucketo es el mejor
 }
-// akki wuz here
