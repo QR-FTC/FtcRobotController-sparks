@@ -8,5 +8,9 @@ public class it_whatever_you_want {
 
     public static void main(String[] args) {
         System.out.println("The volume is " + findVolume(4,5,6));
+        System.out.println("The volume multiplied by four is " + multiplyVolume());
+    }
+    public static int multiplyVolume (){
+        return findVolume(4, 5, 6)*4;
     }
 }
