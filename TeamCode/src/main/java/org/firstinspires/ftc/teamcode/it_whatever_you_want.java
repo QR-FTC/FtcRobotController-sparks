@@ -2,7 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 public class it_whatever_you_want {
 
-    public static int findVolume (int a, int b, int c){
+    public static double findVolume (double a, double b, double c){
         return a*b*c;
     }
 
@@ -10,7 +10,7 @@ public class it_whatever_you_want {
         System.out.println("The volume is " + findVolume(4,5,6));
         System.out.println("The volume multiplied by four is " + multiplyVolume());
     }
-    public static int multiplyVolume (){
+    public static double multiplyVolume (){
         return findVolume(4, 5, 6)*4;
     }
 }
