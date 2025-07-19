@@ -8,12 +8,12 @@ public class doorknob {
             double volume = length * width * height;
             return volume;
         }
-        public static class multiplyvolumeby4{
+
             public static double multiplyvolumeby4(double volume){
-                double newvolume = volume * 4;
+            double newvolume = volume * 4;
                 return newvolume;
             }
-        }
+
 
         public static void main(String[] args) {
             double length = 5.0;
@@ -21,7 +21,8 @@ public class doorknob {
             double height = 2.0;
             double volume = returnvolumeofrectangularprism(length, width, height);
             System.out.println("The volume of the rectangular prism is: " + volume);
-            System.out.println("the volume multiplied by 4 is " + multiplyvolumeby4.multiplyvolumeby4(volume));
+            double newvolume = multiplyvolumeby4(volume);
+            System.out.println("The new volume of the rectangular prism is: " + newvolume);
         }
     }
 }
