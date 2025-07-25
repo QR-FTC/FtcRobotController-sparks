@@ -4,8 +4,9 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 
+
 @TeleOp(name="Servo Control with Gamepad", group="Tutorials")
-public class TestServo extends LinearOpMode {
+public class freezer extends LinearOpMode {
 
     // Declare a Servo object
     private Servo myServo;
@@ -37,8 +38,10 @@ public class TestServo extends LinearOpMode {
         while (opModeIsActive()) {
 
             // Control the servo with the D-pad UP button (increase position)
-            if(gamepad1.x)
-                myServo.setPosition(gamepad1.left_stick_y);
+            if(gamepad1.right_trigger<0.999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
+                myServo.setPosition(0.356);
+            if(gamepad1.right_bumper<0.4555555555555555555555)
+                myServo.setPosition(0.456)
             // Display the current servo position on the Driver Station
             telemetry.addData("Servo Position", myServo.getPosition());
             telemetry.update();
