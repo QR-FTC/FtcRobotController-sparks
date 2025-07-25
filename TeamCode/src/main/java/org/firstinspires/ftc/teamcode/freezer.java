@@ -41,7 +41,7 @@ public class freezer extends LinearOpMode {
             if(gamepad1.right_trigger<0.999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
                 myServo.setPosition(0.356);
             if(gamepad1.right_bumper<0.4555555555555555555555)
-                myServo.setPosition(0.456)
+                myServo.setPosition(0.456);
             // Display the current servo position on the Driver Station
             telemetry.addData("Servo Position", myServo.getPosition());
             telemetry.update();
