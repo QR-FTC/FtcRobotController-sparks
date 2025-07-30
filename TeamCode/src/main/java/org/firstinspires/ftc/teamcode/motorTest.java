@@ -88,12 +88,10 @@ public class motorTest extends LinearOpMode {
             // POV Mode uses left stick to go forward, and right stick to turn.
             // - This uses basic math to combine motions and is easier to drive straight.
             power= -gamepad1.left_stick_y;
-
             // Tank Mode uses one stick to control each wheel.
             // - This requires no math, but it is hard to drive forward slowly and keep straight.
             // power  = -gamepad1.left_stick_y ;
             // rightPower = -gamepad1.right_stick_y ;
-
             // Send calculated power to wheels
             peterParker.setPower(power);
 
