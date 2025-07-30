@@ -26,21 +26,21 @@ public class freezer extends LinearOpMode {
         // Set the initial position of the servo
 //        myServo.setPosition(servoPosition);
 
-        // Display initial servo position on the Driver Station
-//        telemetry.addData("Status", "Initialized");
-//        telemetry.addData("Servo Position", servoPosition);
-//        telemetry.update();
-
-        // Wait for the game to start (driver presses PLAY)
-        waitForStart();
 
         // Run until the end of the match (driver presses STOP)
         while (opModeIsActive()) {
 
+            // Display initial servo position on the Driver Station
+//        telemetry.addData("Status", "Initialized");
+//        telemetry.addData("Servo Position", servoPosition);
+//        telemetry.update();
+
+            // Wait for the game to start (driver presses PLAY)
+            waitForStart();
             // Control the servo with the D-pad UP button (increase position)
-            if(gamepad1.right_trigger<0.999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
+            if(gamepad1.right_trigger<0.99)
                 myServo.setPosition(0.356);
-            if(gamepad1.right_bumper<0.4555555555555555555555)
+            if(gamepad1.left_trigger<0.45)
                 myServo.setPosition(0.456);
             // Display the current servo position on the Driver Station
             telemetry.addData("Servo Position", myServo.getPosition());
