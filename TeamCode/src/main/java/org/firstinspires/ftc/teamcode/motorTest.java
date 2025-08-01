@@ -33,6 +33,7 @@ import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
 
@@ -50,12 +51,13 @@ import com.qualcomm.robotcore.util.Range;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
-@TeleOp(name="Basic: Linear OpMode", group="Linear OpMode")
+@TeleOp(name="commandc", group="Linear OpMode")
 public class motorTest extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
     private DcMotor peterParker = null;
+    private Servo myServo;
 
     @Override
     public void runOpMode() {
@@ -65,7 +67,8 @@ public class motorTest extends LinearOpMode {
         // Initialize the hardware variables. Note that the strings used here as parameters
         // to 'get' must correspond to the names assigned during the robot configuration
         // step (using the FTC Robot Controller app on the phone).
-        peterParker  = hardwareMap.get(DcMotor.class, "clarkKent");
+        peterParker  = hardwareMap.get(DcMotor.class, "pig");
+        myServo = hardwareMap.get(Servo.class, "turret");
 
         // To drive forward, most robots need the motor on one side to be reversed, because the axles point in opposite directions.
         // Pushing the left stick forward MUST make robot go forward. So adjust these two lines based on your first test drive.
@@ -94,8 +97,14 @@ public class motorTest extends LinearOpMode {
             // rightPower = -gamepad1.right_stick_y ;
             // Send calculated power to wheels
             peterParker.setPower(power);
+            if(gamepad1.x)
+                myServo.setPosition(0.12);
+            if(gamepad1.left_trigger>0)
+                peterParker.setPower(0.23);
+            else peterParker.setPower(0);
 
             // Show the elapsed game time and wheel power.
+            telemetry.addData("Servo Position", myServo.getPosition());
             telemetry.addData("Status", "Run Time: " + runtime.toString());
             telemetry.addData("Motors", "power (%.2f)", power);
             telemetry.update();
