@@ -81,7 +81,7 @@ public class sixServos extends LinearOpMode {
         myServo2 = hardwareMap.get(Servo.class, "windowsill");
         myServo3 = hardwareMap.get(Servo.class, "koala");
         myServo4 = hardwareMap.get(Servo.class, "camera");
-        myServo4 = hardwareMap.get(Servo.class, "nomarvelpls");
+        myServo5 = hardwareMap.get(Servo.class, "nomarvelpls");
 
 
 
