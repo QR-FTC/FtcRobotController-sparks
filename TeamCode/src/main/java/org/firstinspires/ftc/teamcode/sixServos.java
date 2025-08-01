@@ -56,7 +56,6 @@ public class sixServos extends LinearOpMode {
 
     // Declare OpMode members.
     private ElapsedTime runtime = new ElapsedTime();
-    private DcMotor peterParker = null;
     private Servo myServo;
     private Servo myServo1;
     private Servo myServo2;
@@ -81,7 +80,7 @@ public class sixServos extends LinearOpMode {
         myServo2 = hardwareMap.get(Servo.class, "windowsill");
         myServo3 = hardwareMap.get(Servo.class, "koala");
         myServo4 = hardwareMap.get(Servo.class, "camera");
-        myServo5 = hardwareMap.get(Servo.class, "nomarvelpls");
+        myServo = hardwareMap.get(Servo.class, "nomarvelpls");
 
 
 
@@ -91,7 +90,6 @@ public class sixServos extends LinearOpMode {
         // To drive forward, most robots need the motor on one side to be reversed, because the axles point in opposite directions.
         // Pushing the left stick forward MUST make robot go forward. So adjust these two lines based on your first test drive.
         // Note: The settings here assume direct drive on left and right wheels.  Gear Reduction or 90 Deg drives may require direction flips
-        peterParker.setDirection(DcMotor.Direction.REVERSE);
 
         // Wait for the game to start (driver presses START)
         waitForStart();
@@ -114,7 +112,6 @@ public class sixServos extends LinearOpMode {
             // power  = -gamepad1.left_stick_y ;
             // rightPower = -gamepad1.right_stick_y ;
             // Send calculated power to wheels
-            peterParker.setPower(power);
             if(gamepad1.x) {
                 myServo.setPosition(1);
                 myServo1.setPosition(1);
