@@ -52,12 +52,31 @@ public class fireExtinguisher {
 
             double left;
             left = gamepad1.left_stick_x;
-            
+
             bottomLeft.setPower(left);
 
+            topLeft.setPower(left);
 
+            bottomRight.setDirection(DcMotor.Direction.REVERSE);
+            bottomRight.setPower(left);
 
+            topRight.setDirection(DcMotor.Direction.REVERSE);
+            topRight.setPower(left);
 
+            double right;
+            right = -gamepad1.left_stick_x;
+
+            bottomLeft.setDirection(DcMotor.Direction.REVERSE);
+            bottomLeft.setPower(right);
+
+            topLeft.setDirection(DcMotor.Direction.REVERSE);
+            topLeft.setPower(right);
+
+            bottomRight.setPower(right);
+
+            topRight.setDirection(DcMotor.Direction.REVERSE);
+
+            
 
 
             while (opModeIsActive()) {
