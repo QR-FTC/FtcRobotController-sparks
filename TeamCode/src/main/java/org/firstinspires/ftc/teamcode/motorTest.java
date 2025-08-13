@@ -98,9 +98,9 @@ public class motorTest extends LinearOpMode {
             // Send calculated power to wheels
             peterParker.setPower(power);
             if(gamepad1.x)
-                myServo.setPosition(1);
+                myServo.setPosition(0.12);
             if(gamepad1.left_trigger>0)
-                peterParker.setPower(0.5);
+                peterParker.setPower(0.23);
             else peterParker.setPower(0);
 
             // Show the elapsed game time and wheel power.
