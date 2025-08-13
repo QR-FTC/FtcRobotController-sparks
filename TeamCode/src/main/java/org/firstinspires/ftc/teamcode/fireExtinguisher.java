@@ -3,11 +3,12 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+public class fireExtinguisher {
 
 
 
-    @TeleOp(name="Works", group="Tutorials")
-    public class fireExtinguisher extends LinearOpMode {
+    @TeleOp(name="Servo Control with Gamepad", group="Tutorials")
+    public class driveTrain extends LinearOpMode {
 
         private DcMotor bottomLeft;
         private DcMotor bottomRight;
@@ -75,37 +76,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
             topRight.setDirection(DcMotor.Direction.REVERSE);
 
-            double straferight;
-
-            straferight = gamepad1.right_stick_x;
-
-            bottomLeft.setDirection(DcMotor.Direction.REVERSE);
-            bottomLeft.setPower(straferight);
-
-            topLeft.setPower(straferight);
-
-            bottomRight.setPower(straferight);
-
-            topRight.setDirection(DcMotor.Direction.REVERSE);
-            topRight.setPower(straferight);
-
-            double strafeleft;
-
-            strafeleft = -gamepad1.right_stick_x;
-
-            bottomLeft.setPower(strafeleft);
-
-            topLeft.setDirection(DcMotor.Direction.REVERSE);
-            topLeft.setPower(strafeleft);
-
-            bottomRight.setDirection(DcMotor.Direction.REVERSE);
-            bottomRight.setPower(strafeleft);
-
-            topRight.setPower(strafeleft);
-
-
-
-
+            
 
 
             while (opModeIsActive()) {
@@ -123,4 +94,4 @@ import com.qualcomm.robotcore.hardware.DcMotor;
             }
         }
     }
-
+}
