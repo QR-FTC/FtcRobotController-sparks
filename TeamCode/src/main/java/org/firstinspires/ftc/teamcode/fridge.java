@@ -33,10 +33,10 @@ public class fridge extends LinearOpMode {
         // Replace "my_servo" with the name you configured for your servo in the Robot Controller app
         myServo = hardwareMap.get(Servo.class, "turret");
         nato  = hardwareMap.get(DcMotor.class, "ww2");
-        nicaragua = hardwareMap.get(DcMotor.class, "central america")
-        brazil = hardwareMap.get(DcMotor.class, "you're coming to brazil")
-        murica = hardwareMap.get(DcMotor.class, "Amurica")
-        caneeda = hardwareMap.get(DcMotor.class, "Caneeda")
+        nicaragua = hardwareMap.get(DcMotor.class, "central america");
+        brazil = hardwareMap.get(DcMotor.class, "you're coming to brazil");
+        murica = hardwareMap.get(DcMotor.class, "Amurica");
+        caneeda = hardwareMap.get(DcMotor.class, "Caneeda");
 
         // Set the initial position of the servo
 //        myServo.setPosition(servoPosition);
