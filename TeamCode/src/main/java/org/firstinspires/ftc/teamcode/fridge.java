@@ -15,6 +15,10 @@ public class fridge extends LinearOpMode {
     // Declare a Servo object
     private Servo myServo;
     private DcMotor nato = null;
+    private DcMotor nicaragua = null;
+    private DcMotor brazil = null;
+    private DcMotor murica = null;
+    private DcMotor caneeda = null;
 
 
     // Define the initial servo position (e.g., 0.5 for the center)
@@ -29,6 +33,10 @@ public class fridge extends LinearOpMode {
         // Replace "my_servo" with the name you configured for your servo in the Robot Controller app
         myServo = hardwareMap.get(Servo.class, "turret");
         nato  = hardwareMap.get(DcMotor.class, "ww2");
+        nicaragua = hardwareMap.get(DcMotor.class, "central america");
+        brazil = hardwareMap.get(DcMotor.class, "you're coming to brazil");
+        murica = hardwareMap.get(DcMotor.class, "Amurica");
+        caneeda = hardwareMap.get(DcMotor.class, "Caneeda");
 
         // Set the initial position of the servo
 //        myServo.setPosition(servoPosition);
@@ -60,6 +68,18 @@ public class fridge extends LinearOpMode {
                 myServo.setPosition(0.556);
             if(gamepad1.right_stick_y<0.6)
                 myServo.setPosition(0.666);
+            if(gamepad1.left_trigger<0.4)
+                nato.setPower(0.766);
+            if(gamepad1.left_trigger<0.4)
+                nicaragua.setPower(0.866);
+            if(gamepad1.left_trigger<0.4)
+                brazil.setPower(0.966);
+            if(gamepad1.left_trigger<0.4)
+                murica.setPower(0.166);
+            if(gamepad1.left_trigger<0.4)
+                caneeda.setPower(0.266);
+
+
 
         }
     }
