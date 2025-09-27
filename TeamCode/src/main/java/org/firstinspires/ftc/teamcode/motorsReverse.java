@@ -86,8 +86,8 @@ public class motorsReverse extends LinearOpMode {
         while (opModeIsActive()) {
 
             if (gamepad1.y) {
-                dog.setPower(gamepad1.left_trigger);
-                cat.setPower(gamepad1.left_trigger);
+                dog.setPower(1);
+                cat.setPower(1);
 
                 // Show the elapsed game time and wheel power.
                 telemetry.addData("Status", "Run Time: " + runtime.toString());
