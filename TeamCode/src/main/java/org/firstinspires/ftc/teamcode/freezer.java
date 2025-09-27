@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
 
@@ -10,7 +11,7 @@ public class freezer extends LinearOpMode {
 
     // Declare a Servo object
     private Servo myServo;
-
+    private DcMotor myMotor;
     // Define the initial servo position (e.g., 0.5 for the center)
 //    private double servoPosition = 0.5;
 
@@ -23,6 +24,7 @@ public class freezer extends LinearOpMode {
         // Replace "my_servo" with the name you configured for your servo in the Robot Controller app
         myServo = hardwareMap.get(Servo.class, "turret");
 
+        myMotor  = hardwareMap.get(DcMotor.class, "clarkKent");
         // Set the initial position of the servo
 //        myServo.setPosition(servoPosition);
 
@@ -42,6 +44,8 @@ public class freezer extends LinearOpMode {
                 myServo.setPosition(0.356);
             if(gamepad1.left_trigger<0.45)
                 myServo.setPosition(0.456);
+
+            myMotor.setPower(0.47);
             // Display the current servo position on the Driver Station
             telemetry.addData("Servo Position", myServo.getPosition());
             telemetry.update();
