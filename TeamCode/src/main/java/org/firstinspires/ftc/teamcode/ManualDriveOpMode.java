@@ -53,6 +53,12 @@ public class ManualDriveOpMode extends LinearOpMode {
                 rightFMotor.setPower(-1);
                 rightBMotor.setPower(-1);
             }
+            else {
+                leftFMotor.setPower(0);
+                leftBMotor.setPower(0);
+                rightFMotor.setPower(0);
+                rightBMotor.setPower(0);
+            }
 
 
 
