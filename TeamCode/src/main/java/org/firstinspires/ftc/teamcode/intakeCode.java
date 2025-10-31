@@ -13,6 +13,10 @@ public class intakeCode extends LinearOpMode {
             if (gamepad1.left_trigger < 1)
                 geckoWheels.setPower(gamepad1.left_stick_y);
 
+            public void RunOpMode () {
+
+            }
+
 
         }
 
