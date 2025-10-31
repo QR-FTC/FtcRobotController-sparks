@@ -10,14 +10,12 @@ public class intakeCode extends LinearOpMode {
         geckoWheels = hardwareMap.get(DcMotor.class, "Intake_1");
         while (opModeIsActive()) {
             waitForStart();
-            if(gamepad1.left_trigger <1)
-                geckoWheels.setPower(0.50);
-            if(gamepad1.right_trigger<1)
-                geckoWheels.setPower(-0.50);
+            if (gamepad1.left_trigger < 1)
+                geckoWheels.setPower(gamepad1.left_stick_y);
 
+
+        }
 
     }
-
-
 }
 
