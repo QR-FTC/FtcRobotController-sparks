@@ -1,0 +1,54 @@
+import cv2
+import apriltag
+
+# Set up the AprilTag detector
+options = apriltag.DetectorOptions(families="tagStandard41h12")
+detector = apriltag.Detector(options)
+
+# Open camera (0 is the default webcam)
+cap = cv2.VideoCapture(0)
+
+if not cap.isOpened():
+    print("Error: Cannot open camera.")
+    exit()
+
+print("Looking for AprilTags with ID 20 to 24...")
+
+try:
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            print("Error: Failed to grab frame.")
+            break
+
+        # Convert to grayscale (required by apriltag detector)
+        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+        # Detect AprilTags in the image
+        results = detector.detect(gray)
+
+        for tag in results:
+            tag_id = tag.tag_id
+
+            # Filter IDs 20 to 24
+            if 20 <= tag_id <= 24:
+                # Draw bounding box
+                for i in range(4):
+                    pt1 = tuple(map(int, tag.corners[i]))
+                    pt2 = tuple(map(int, tag.corners[(i + 1) % 4]))
+                    cv2.line(frame, pt1, pt2, (0, 255, 0), 2)
+
+                # Display ID
+                center = tuple(map(int, tag.center))
+                cv2.putText(frame, f"ID: {tag_id}", (center[0] - 10, center[1] - 10),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+
+        # Show the video feed with detection
+        cv2.imshow("AprilTag Detection", frame)
+
+        if cv2.waitKey(1) == 27:  # Press Esc to exit
+            break
+
+finally:
+    cap.release()
+    cv2.destroyAllWindows()
