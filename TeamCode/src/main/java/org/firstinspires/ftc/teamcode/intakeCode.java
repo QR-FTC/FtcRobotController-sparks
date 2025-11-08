@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 
 
 public class intakeCode extends LinearOpMode {
-    private DcMotor geckoWheels = null;
+    private DcMotor geckoWheels;
     public void runOpMode() {
         geckoWheels = hardwareMap.get(DcMotor.class, "Intake_1");
         while (opModeIsActive()) {
@@ -13,9 +13,7 @@ public class intakeCode extends LinearOpMode {
             if (gamepad1.left_trigger < 1)
                 geckoWheels.setPower(gamepad1.left_stick_y);
 
-            public void RunOpMode () {
 
-            }
 
 
         }

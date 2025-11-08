@@ -12,7 +12,7 @@ public class deposit_1 extends LinearOpMode {
 
     @Override
     public void runOpMode()  {
-        servoDeposit = get(Servo.class, "deposit_1");
+        servoDeposit = hardwareMap.get(Servo.class, "Servo_Deposit");
 
         while (opModeIsActive()) {
 
